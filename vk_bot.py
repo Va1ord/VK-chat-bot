@@ -25,3 +25,9 @@ for event in longpoll.listen():
                     send_messages(chat_id, 'You used profanity')
                 else:
                     send_messages(chat_id, msg)
+                    
+    if event.type == VkBotEventType.GROUP_JOIN:
+        print(f'{event.obj.user_id} joined a group!')
+        
+    if event.type == VkBotEventType.MESSAGE_TYPING_STATE:
+        print(f'Typing {event.obj.from_id} to {event.obj.to_id}')
