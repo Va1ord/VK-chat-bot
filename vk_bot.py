@@ -31,3 +31,4 @@ for event in longpoll.listen():
         
     if event.type == VkBotEventType.MESSAGE_TYPING_STATE:
         print(f'Typing {event.obj.from_id} to {event.obj.to_id}')
+        
